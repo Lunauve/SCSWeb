@@ -5,7 +5,9 @@
 
 /* ---- NAV ---- */
 nav {
-  position: relative;
+  position: fixed;
+  box-sizing: border-box;
+  width: 100%;
   z-index: 50;
   background: linear-gradient(180deg, rgba(6,13,8,0.98) 0%, rgba(6,13,8,0.75) 100%);
   border-bottom: 1px solid rgba(26, 92, 42, 0.5);
@@ -92,6 +94,7 @@ footer {
   background: var(--bg-base);
   border-top: 1px solid rgba(26, 92, 42, 0.35);
   padding: 56px 48px 28px;
+  scroll-snap-align: start;
 }
 
 .footer-grid {
