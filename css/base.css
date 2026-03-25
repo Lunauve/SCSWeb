@@ -9,10 +9,13 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: auto;
-  /* scroll-snap-type: y mandatory; */
-  height: 100%;
+html { scroll-behavior: auto; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* ensures it stays above other elements */
+  background: var(--bg-base); /* or your nav background color */
 }
 
 body {
@@ -21,20 +24,6 @@ body {
   color: var(--text);
   overflow-x: hidden;
   line-height: 1.6;
-  height: 100%;
-  overflow-y: scroll;
-  scroll-padding-top: var(--nav-height);
-}
-
-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
-  min-height: 300vh;
-  scroll-margin-top: var(--nav-height);
-}
-
-section > * {
-  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
 img { max-width: 100%; display: block; }
