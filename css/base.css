@@ -1,0 +1,133 @@
+/* ============================================================
+   SCS USJ-R — Base Styles
+   Reset, body defaults, typography scale, shared utilities.
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { text-decoration: none; }
+
+/* --- Utility: Section Divider --- */
+.divider {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(26, 92, 42, 0.5) 30%,
+    rgba(245, 197, 24, 0.4) 50%,
+    rgba(26, 92, 42, 0.5) 70%,
+    transparent
+  );
+}
+
+/* --- Utility: Section Eyebrow --- */
+.s-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.s-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* --- Utility: Section Heading --- */
+.s-h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+}
+.s-h2 span { color: var(--gold); }
+
+/* --- Utility: Section Header Row --- */
+.section-hdr {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+/* --- Utility: See All Link --- */
+.see-all {
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(245, 197, 24, 0.55);
+  border-bottom: 1px solid rgba(245, 197, 24, 0.2);
+  padding-bottom: 2px;
+  transition: color 0.2s;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-bottom: 6px;
+}
+.see-all:hover { color: var(--gold); }
+
+/* --- Buttons --- */
+.btn-primary {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #060D08;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--amber) 100%);
+  padding: 14px 36px;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+  transition: opacity 0.2s, transform 0.15s;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-2px); }
+
+.btn-ghost {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold);
+  background: transparent;
+  padding: 13px 36px;
+  border: 1px solid rgba(245, 197, 24, 0.35);
+  clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+  text-transform: uppercase;
+}
+.btn-ghost:hover { background: rgba(245, 197, 24, 0.07); transform: translateY(-2px); }
+
+/* --- Animations --- */
+@keyframes pulse       { 0%,100%{opacity:0.4} 50%{opacity:1} }
+@keyframes fadeUp      { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes rotateSlow  { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes twinkle     { 0%,100%{opacity:0.15} 50%{opacity:0.8} }
+@keyframes shimmer     { 0%{background-position:-200% center} 100%{background-position:200% center} }

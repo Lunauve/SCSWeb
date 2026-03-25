@@ -1,0 +1,51 @@
+/* ============================================================
+   SCS USJ-R — Design Tokens
+   All colors, fonts, spacing, and breakpoints live here.
+   Edit this file to retheme the entire site.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Pro:ital,wght@0,300;1,300&family=Rajdhani:wght@300;400;500;600&display=swap');
+
+:root {
+  /* --- Brand Colors --- */
+  --gold:       #F5C518;
+  --gold-light: #FFD84D;
+  --amber:      #E8712A;
+  --green:      #1A5C2A;
+  --green-2:    #22723A;
+  --green-3:    #0D3318;
+
+  /* --- Background Layers --- */
+  --bg-base:    #060D08;
+  --bg-2:       #0A1410;
+  --bg-3:       #0F1C14;
+
+  /* --- Text --- */
+  --text:       #EDF5E8;
+  --muted:      rgba(237, 245, 232, 0.5);
+
+  /* --- Borders --- */
+  --border-g:   rgba(26, 92, 42, 0.4);
+  --border-y:   rgba(245, 197, 24, 0.2);
+
+  /* --- Glow / FX --- */
+  --glow-g:     rgba(26, 92, 42, 0.6);
+  --glow-y:     rgba(245, 197, 24, 0.4);
+
+  /* --- Typography --- */
+  --font-display: 'Cinzel', serif;
+  --font-body:    'Rajdhani', sans-serif;
+  --font-italic:  'Crimson Pro', serif;
+
+  /* --- Spacing Scale --- */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  48px;
+  --space-xl:  80px;
+
+  /* --- Layout --- */
+  --max-width: 1200px;
+  --nav-height: 64px;
+  --section-pad: 80px 48px;
+}
