@@ -9,6 +9,10 @@
   padding: 0;
 }
 
+:root {
+  --nav-height: 64px; /* adjust to match your actual nav height */
+}
+
 html { scroll-behavior: auto; }
 
 nav {
@@ -24,6 +28,12 @@ body {
   color: var(--text);
   overflow-x: hidden;
   line-height: 1.6;
+}
+
+section {
+  height: calc(100vh - var(--nav-height));
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 img { max-width: 100%; display: block; }

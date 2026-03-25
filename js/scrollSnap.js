@@ -1,17 +1,56 @@
 let animationFrameId = null;
-let sections = [];
+let sections = []; // only <section> elements
+let footer = null;
+let scrollTargets = []; // pre-computed Y positions for all stops
+
+const NAV_HEIGHT = parseInt(
+  getComputedStyle(document.documentElement).getPropertyValue('--nav-height')
+);
 
 function initSections() {
-  sections = Array.from(document.querySelectorAll("section, footer"));
+  sections = Array.from(document.querySelectorAll("section"));
+  footer = document.querySelector("footer");
+
+  scrollTargets = [
+    ...sections.map((_, i) => i * (window.innerHeight - NAV_HEIGHT)),
+    ...(footer ? [document.body.scrollHeight - window.innerHeight] : [])
+  ];
 }
 
-function getCurrentSectionIndex() {
-  const scrollPos = window.scrollY + 10;
-  let index = 0;
-  sections.forEach((section, i) => {
-    if (scrollPos >= section.offsetTop - 1) index = i;
+function getCurrentIndex() {
+  const scrollPos = window.scrollY;
+  let closest = 0;
+  let minDist = Infinity;
+
+  scrollTargets.forEach((targetY, i) => {
+    const dist = Math.abs(scrollPos - targetY);
+    if (dist < minDist) {
+      minDist = dist;
+      closest = i;
+    }
   });
-  return index;
+
+  return closest;
+}
+
+function getNavHeight() {
+  const nav = document.querySelector("nav");
+  return nav ? nav.getBoundingClientRect().height : 0;
+}
+
+function initSections() {
+  const navH = getNavHeight();
+  document.documentElement.style.setProperty('--nav-height', `${navH}px`);
+
+  sections = Array.from(document.querySelectorAll("section"));
+  footer = document.querySelector("footer");
+
+  const sectionH = window.innerHeight - navH;
+
+  scrollTargets = [
+    ...sections.map((_, i) => i * sectionH),
+    ...(footer ? [document.body.scrollHeight - window.innerHeight] : [])
+  ];
 }
 
 function smoothScrollTo(targetY, duration = 700) {
@@ -53,30 +92,16 @@ window.addEventListener(
 
     clearTimeout(scrollDebounceTimer);
     scrollDebounceTimer = setTimeout(() => {
-      const currentIndex = getCurrentSectionIndex();
+      const currentIndex = getCurrentIndex();
       const direction = e.deltaY > 0 ? 1 : -1;
-      const nextIndex = Math.max(0, Math.min(sections.length - 1, currentIndex + direction));
-      const targetSection = sections[nextIndex];
+      const nextIndex = Math.max(0, Math.min(scrollTargets.length - 1, currentIndex + direction));
 
-      if (!targetSection) return;
-
-      const isLast = nextIndex === sections.length - 1;
-
-      // If scrolling to the last section (footer), scroll to page bottom instead
-      const targetY = isLast
-        ? document.body.scrollHeight - window.innerHeight
-        : targetSection.offsetTop;
-
-      smoothScrollTo(targetY);
+      smoothScrollTo(scrollTargets[nextIndex]);
     }, 50);
   },
   { passive: false }
 );
 
-// Wait for nav.js to finish injecting before collecting sections
 document.addEventListener("DOMContentLoaded", () => {
-  // nav.js also runs on DOMContentLoaded — use setTimeout to ensure
-  // it runs after nav.js's listener (listeners fire in registration order,
-  // but this guarantees the footer is in the DOM)
   setTimeout(initSections, 0);
 });
