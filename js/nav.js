@@ -13,7 +13,7 @@ const NAV_HTML = `
   <div class="nav-logo">
     <div class="logo-emblem">
       <div class="logo-emblem">
-  <img src="/assets/SCS.png" alt="SCS Logo" style="width:38px;height:38px;object-fit:contain;">
+  <img src="/SCSWeb/assets/SCS.png" alt="SCS Logo" style="width:38px;height:38px;object-fit:contain;">
 </div>
     </div>
     <div class="logo-text">
@@ -38,8 +38,8 @@ const FOOTER_HTML = `
   <div class="footer-grid">
     <div class="footer-brand">
       <div style="display:flex;gap:8px;align-items:center;">
-        <img src="/assets/USJR.png" alt="USJR Logo" style="width:46px;height:46px;object-fit:contain;">
-        <img src="/assets/SCS.png" alt="SCS Logo" style="width:44px;height:44px;object-fit:contain;">
+        <img src="/SCSWeb/assets/USJR.png" alt="USJR Logo" style="width:46px;height:46px;object-fit:contain;">
+        <img src="/SCSWeb/assets/SCS.png" alt="SCS Logo" style="width:44px;height:44px;object-fit:contain;">
       </div>
       <h3>School of Computer Studies</h3>
       <p>University of San Jose – Recoletos<br>Basak, Mambaling, Cebu City<br>Shaping technologists with purpose.</p>
