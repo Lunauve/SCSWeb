@@ -102,6 +102,22 @@ window.addEventListener(
   { passive: false }
 );
 
+let touchStartY = 0;
+
+window.addEventListener('touchstart', (e) => {
+  touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+window.addEventListener('touchend', (e) => {
+  const delta = touchStartY - e.changedTouches[0].clientY;
+  if (Math.abs(delta) < 10) return; // ignore taps
+
+  const currentIndex = getCurrentIndex();
+  const direction = delta > 0 ? 1 : -1;
+  const nextIndex = Math.max(0, Math.min(scrollTargets.length - 1, currentIndex + direction));
+  smoothScrollTo(scrollTargets[nextIndex]);
+}, { passive: true });
+
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(initSections, 0);
 });
