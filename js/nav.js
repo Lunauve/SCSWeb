@@ -52,7 +52,7 @@ const FOOTER_HTML = `
           </ul>
         <li><p>Graduate Programs</p></li>
           <ul>
-            <li><a href="${BASE}/pages/programs.html#6">Masters Degree in Information Technology</a></li>
+            <li><a href="${BASE}/pages/programs.html#6">Master of Information Technology</a></li>
           </ul>
       </ul>
     </div>
