@@ -101,8 +101,8 @@ footer {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 48px;
-  margin-bottom: 48px;
-  padding-bottom: 40px;
+  margin-bottom: 0;
+  padding-bottom: 24px;
   border-bottom: 1px solid rgba(26, 92, 42, 0.2);
 }
 
@@ -158,10 +158,16 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  line-height: 1;
+  padding-top: 12px;
+  margin-top: 0;
 }
 .footer-bottom span {
   font-size: 12px;
   color: rgba(237, 245, 232, 0.25);
   letter-spacing: 0.5px;
+  line-height: 1;
+  display: inline-block;
+  margin-top: 10px;
 }
 .footer-bottom .usjr { color: rgba(26, 92, 42, 0.8); }

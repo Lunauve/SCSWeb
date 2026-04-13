@@ -20,6 +20,7 @@ const NAV_HTML = `
     <li><a href="${BASE}/pages/programs.html" data-page="programs">Programs</a></li>
     <li><a href="${BASE}/pages/about.html"    data-page="about">About</a></li>
     <li><a href="${BASE}/pages/news.html"     data-page="news">News</a></li>
+    <li><a href="${BASE}/pages/hof.html"      data-page="hof">Hall of Fame</a></li>
   </ul>
   <a href="${BASE}/pages/contact.html" class="nav-btn">Contact Us</a>
 </nav>
@@ -36,22 +37,22 @@ const FOOTER_HTML = `
         <img src="${BASE}/assets/SCS.png" alt="SCS Logo" style="width:44px;height:44px;object-fit:contain;">
       </div>
       <h3>School of Computer Studies</h3>
-      <p>University of San Jose – Recoletos<br>Basak, Mambaling, Cebu City<br>Shaping technologists with purpose.</p>
+      <p>University of San Jose – Recoletos<br>Quadricentennial Campus<br>22 A. Borromeo St, Cebu City, 6000 Cebu<br><br>scs@usjr.edu.ph</p>
     </div>
     <div class="footer-col">
       <h4>Programs</h4>
       <ul>
         <li><p>Undergraduate Programs</p></li>
           <ul>
-            <li><a href="${BASE}/pages/programs.html">Bachelor of Science in Computer Science</a></li>
-            <li><a href="${BASE}/pages/programs.html">Bachelor of Science in Information Technology</a></li>
-            <li><a href="${BASE}/pages/programs.html">Bachelor of Science in Game Development</a></li>
-            <li><a href="${BASE}/pages/programs.html">Bachelor of Science in Information Systems</a></li>
-            <li><a href="${BASE}/pages/programs.html">Associate in Computer Technology</a></li>
+            <li><a href="${BASE}/pages/programs.html#1">Bachelor of Science in Computer Science</a></li>
+            <li><a href="${BASE}/pages/programs.html#2">Bachelor of Science in Information Technology</a></li>
+            <li><a href="${BASE}/pages/programs.html#3">Bachelor of Science in Game Development</a></li>
+            <li><a href="${BASE}/pages/programs.html#4">Bachelor of Science in Information Systems</a></li>
+            <li><a href="${BASE}/pages/programs.html#5">Associate in Computer Technology</a></li>
           </ul>
         <li><p>Graduate Programs</p></li>
           <ul>
-            <li><a href="${BASE}/pages/programs.html">Masters Degree in Information Technology</a></li>
+            <li><a href="${BASE}/pages/programs.html#6">Masters Degree in Information Technology</a></li>
           </ul>
       </ul>
     </div>
@@ -60,6 +61,7 @@ const FOOTER_HTML = `
       <ul>
         <li><a href="${BASE}/pages/about.html">About SCS</a></li>
         <li><a href="${BASE}/pages/about.html">Faculty</a></li>
+        <li><a href="${BASE}/pages/hof.html">Hall of Fame</a></li>
         <li><a href="${BASE}/pages/news.html">Announcements</a></li>
         <li><a href="${BASE}/pages/contact.html">Contact Us</a></li>
       </ul>

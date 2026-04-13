@@ -7,26 +7,388 @@
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
-  <!-- Add css/programs.css here when you build this page out -->
+  <link rel="stylesheet" href="../css/programs.css">
 </head>
 <body data-page="programs">
 
   <!-- nav injected by nav.js -->
 
-  <section style="min-height:80vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 48px;background:radial-gradient(ellipse 80% 60% at 50% 0%,#0D2E14,var(--bg-base) 70%)">
-    <div class="s-eyebrow" style="justify-content:center">Academic Programs</div>
-    <h1 style="font-family:var(--font-display);font-size:52px;font-weight:700;color:#fff;margin:16px 0 20px;letter-spacing:-0.5px">
-      Programs <span style="color:var(--gold)">Page</span>
-    </h1>
-    <p style="color:var(--muted);font-size:16px;max-width:480px;line-height:1.8;margin-bottom:32px">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <a href="../index.html" class="btn-ghost">← Back to Home</a>
+  <!-- Sidebar progress dots -->
+  <div class="prog-sidebar" id="sidebar">
+    <div class="sidebar-pip active" data-index="0" title="Overview"></div>
+    <div class="sidebar-pip" data-index="1" title="Computer Science"></div>
+    <div class="sidebar-pip" data-index="2" title="Information Technology"></div>
+    <div class="sidebar-pip" data-index="3" title="Game Development"></div>
+    <div class="sidebar-pip" data-index="4" title="Information Systems"></div>
+    <div class="sidebar-pip" data-index="5" title="Computer Technology"></div>
+    <div class="sidebar-pip" data-index="6" title="Master of IT"></div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <!-- <section class="prog-hero">
+    <div class="hero-grid"></div>
+    <div class="hero-orb"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring-2"></div>
+
+    <div class="hero-eyebrow">
+      <span class="eyebrow-line"></span>
+      School of Computer Studies · University of San Jose - Recoletos
+      <span class="eyebrow-line r"></span>
+    </div>
+
+    <h1>Academic<br><span class="accent">Programs</span></h1>
+    <div class="hero-sub">Six pathways. One direction — forward.</div>
+
+    <div class="hero-divider">
+      <span></span>
+      <img src="../assets/SCS.png" alt="SCS" style="width:16px;height:16px;object-fit:contain;">
+      <span class="r"></span>
+    </div>
+
+    <p>Choose the program that aligns with your ambitions and let the School of Computer Studies forge your future in technology.</p>
+
+    <div class="hero-btns">
+      <a href="../index.html" class="btn-ghost">← Back to Home</a>
+    </div>
+
+    <div class="prog-index-row">
+      <div class="prog-index-dot active" data-index="1">BSCS</div>
+      <span class="prog-index-sep">|</span>
+      <div class="prog-index-dot" data-index="2">BSIT</div>
+      <span class="prog-index-sep">|</span>
+      <div class="prog-index-dot" data-index="3">BSGD</div>
+      <span class="prog-index-sep">|</span>
+      <div class="prog-index-dot" data-index="4">BSIS</div>
+      <span class="prog-index-sep">|</span>
+      <div class="prog-index-dot" data-index="5">ACT</div>
+      <span class="prog-index-sep">|</span>
+      <div class="prog-index-dot" data-index="6">MIT</div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-caret">
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+  </section> -->
+  <section class="prog-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="stars" id="stars"></div>
+
+  <div class="hero-eyebrow">
+    <span class="eyebrow-line"></span>
+    School of Computer Studies · University of San Jose - Recoletos
+    <span class="eyebrow-line r"></span>
+  </div>
+
+  <div class="hero-title">
+    <h1>Academic <span class="accent">Programs</span></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+
+  <div class="prog-selector">
+
+    <div class="prog-sel-card" data-index="1">
+      <!-- <div class="sel-num">01</div> -->
+      <div class="sel-body">
+        <span class="sel-badge badge-lg-bs">Bachelor of Science in</span>
+        <strong>Computer Science</strong>
+        <span class="sel-abbr">BSCS</span>
+      </div>
+      <div class="sel-arrow">→</div>
+    </div>
+
+    <div class="prog-sel-card" data-index="2">
+      <!-- <div class="sel-num">02</div> -->
+      <div class="sel-body">
+        <span class="sel-badge badge-lg-bs">Bachelor of Science in</span>
+        <strong>Information Technology</strong>
+        <span class="sel-abbr">BSIT</span>
+      </div>
+      <div class="sel-arrow">→</div>
+    </div>
+
+    <div class="prog-sel-card" data-index="3">
+      <!-- <div class="sel-num">03</div> -->
+      <div class="sel-body">
+        <span class="sel-badge badge-lg-bs">Bachelor of Science in</span>
+        <strong>Game Development</strong>
+        <span class="sel-abbr">BSGD</span>
+      </div>
+      <div class="sel-arrow">→</div>
+    </div>
+
+    <div class="prog-sel-card" data-index="4">
+      <!-- <div class="sel-num">04</div> -->
+      <div class="sel-body">
+        <span class="sel-badge badge-lg-bs">Bachelor of Science in</span>
+        <strong>Information Systems</strong>
+        <span class="sel-abbr">BSIS</span>
+      </div>
+      <div class="sel-arrow">→</div>
+    </div>
+
+    <div class="prog-sel-card" data-index="5">
+      <!-- <div class="sel-num">05</div> -->
+      <div class="sel-body">
+        <span class="sel-badge badge-lg-dip">Associate in</span>
+        <strong>Computer Technology</strong>
+        <span class="sel-abbr">ACT</span>
+      </div>
+      <div class="sel-arrow">→</div>
+    </div>
+
+    <div class="prog-sel-card" data-index="6">
+      <!-- <div class="sel-num">06</div> -->
+      <div class="sel-body">
+        <span class="sel-badge badge-lg-ms">Master of</span>
+        <strong>Information Technology</strong>
+        <span class="sel-abbr">MIT</span>
+      </div>
+      <div class="sel-arrow">→</div>
+    </div>
+
+  </div>
+
+  <div class="hero-scroll">
+    <!-- <span>Scroll</span> -->
+    <div class="scroll-line"></div>
+  </div>
+
+</section>
+
+  <!-- ===================== 01 · BS Computer Science ===================== -->
+  <section class="program-section bs-cs">
+    <div class="prog-content-panel">
+      <div class="inner">
+        <span class="prog-badge-lg badge-lg-bs">Bachelor of Science in</span>
+        <h2>Computer<br><span>Science</span></h2>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="prog-specs">
+          <div class="spec-item">
+            <span class="spec-val">4</span>
+            <span class="spec-lbl">Years</span>
+          </div>
+          <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">#</span>
+            <span class="spec-lbl">Units</span>
+          </div>
+          <!-- <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">CHED</span>
+            <span class="spec-lbl">Accredited</span>
+          </div> -->
+        </div>
+        <ul class="prog-tracks">
+          <li>Algorithms &amp; Data Structures</li>
+          <li>Machine Learning &amp; Artificial Intelligence</li>
+          <li>Elective Subj</li>
+          <li>Elective Subj</li>
+        </ul>
+        <a href="#" class="prog-prospectus">View Prospectus →</a>
+      </div>
+    </div>
+    <div class="prog-image-panel">
+      <img src="../assets/student_study.png" alt="Computer Science students">
+    </div>
+  </section>
+
+  <!-- ===================== 02 · BS Information Technology ===================== -->
+  <section class="program-section bs-it flip">
+    <div class="prog-content-panel">
+      <div class="inner">
+        <span class="prog-badge-lg badge-lg-bs">Bachelor of Science in</span>
+        <h2>Information<br><span>Technology</span></h2>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="prog-specs">
+          <div class="spec-item">
+            <span class="spec-val">4</span>
+            <span class="spec-lbl">Years</span>
+          </div>
+          <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">#</span>
+            <span class="spec-lbl">Units</span>
+          </div>
+          <!-- <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">OJT</span>
+            <span class="spec-lbl">Included</span>
+          </div> -->
+        </div>
+        <ul class="prog-tracks">
+          <li>Network Administration &amp; Security</li>
+          <li>Web &amp; Mobile Application Development</li>
+          <li>Elective Subj</li>
+          <li>Elective Subj</li>
+        </ul>
+        <a href="#" class="prog-prospectus">View Prospectus →</a>
+      </div>
+    </div>
+    <div class="prog-image-panel">
+      <img src="../assets/student_study.png" alt="Information Technology students">
+    </div>
+  </section>
+
+  <!-- ===================== 03 · BS Game Development ===================== -->
+  <section class="program-section bs-gd">
+    <div class="prog-content-panel">
+      <div class="inner">
+        <span class="prog-badge-lg badge-lg-bs">Bachelor of Science in</span>
+        <h2>Game<br><span>Development</span></h2>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="prog-specs">
+          <div class="spec-item">
+            <span class="spec-val">4</span>
+            <span class="spec-lbl">Years</span>
+          </div>
+          <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">#</span>
+            <span class="spec-lbl">Units</span>
+          </div>
+          <!-- <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">Unity</span>
+            <span class="spec-lbl">Engine</span>
+          </div> -->
+        </div>
+        <ul class="prog-tracks">
+          <li>Game Engine Programming (Unity / Unreal)</li>
+          <li>3D Modeling &amp; Animation</li>
+          <li>Elective Subj</li>
+          <li>Elective Subj</li>
+        </ul>
+        <a href="#" class="prog-prospectus">View Prospectus →</a>
+      </div>
+    </div>
+    <div class="prog-image-panel">
+      <img src="../assets/student_study.png" alt="Game Development students">
+    </div>
+  </section>
+
+  <!-- ===================== 04 · BS Information Systems ===================== -->
+  <section class="program-section bs-is flip">
+    <div class="prog-content-panel">
+      <div class="inner">
+        <span class="prog-badge-lg badge-lg-bs">Bachelor of Science in</span>
+        <h2>Information<br><span>Systems</span></h2>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="prog-specs">
+          <div class="spec-item">
+            <span class="spec-val">4</span>
+            <span class="spec-lbl">Years</span>
+          </div>
+          <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">#</span>
+            <span class="spec-lbl">Units</span>
+          </div>
+          <!-- <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">MBA</span>
+            <span class="spec-lbl">Bridge</span>
+          </div> -->
+        </div>
+        <ul class="prog-tracks">
+          <li>Business Intelligence &amp; Analytics</li>
+          <li>Systems Analysis &amp; Design</li>
+          <li>Elective Subj</li>
+          <li>Elective Subj</li>
+        </ul>
+        <a href="#" class="prog-prospectus">View Prospectus →</a>
+      </div>
+    </div>
+    <div class="prog-image-panel">
+      <img src="../assets/student_study.png" alt="Information Systems students">
+    </div>
+  </section>
+
+  <!-- ===================== 05 · Associate in Computer Technology ===================== -->
+  <section class="program-section assoc">
+    <div class="prog-content-panel">
+      <div class="inner">
+        <span class="prog-badge-lg badge-lg-dip">Associate in</span>
+        <h2>Computer<br><span>Technology</span></h2>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="prog-specs">
+          <div class="spec-item">
+            <span class="spec-val">2</span>
+            <span class="spec-lbl">Years</span>
+          </div>
+          <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">#</span>
+            <span class="spec-lbl">Units</span>
+          </div>
+          <!-- <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">NC II</span>
+            <span class="spec-lbl">TESDA</span>
+          </div> -->
+        </div>
+        <ul class="prog-tracks">
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+        </ul>
+        <a href="#" class="prog-prospectus">View Prospectus →</a>
+      </div>
+    </div>
+    <div class="prog-image-panel">
+      <img src="../assets/student_study.png" alt="Computer Technology students">
+    </div>
+  </section>
+
+  <!-- ===================== 06 · Master of Information Technology ===================== -->
+  <section class="program-section ms-it flip">
+    <div class="prog-content-panel">
+      <div class="inner">
+        <span class="prog-badge-lg badge-lg-ms">Master of</span>
+        <h2>Information<br><span>Technology</span></h2>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <div class="prog-specs">
+          <div class="spec-item">
+            <span class="spec-val">2</span>
+            <span class="spec-lbl">Years</span>
+          </div>
+          <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">#</span>
+            <span class="spec-lbl">Units</span>
+          </div>
+          <!-- <div class="spec-divider"></div>
+          <div class="spec-item">
+            <span class="spec-val">Thesis</span>
+            <span class="spec-lbl">Track</span>
+          </div> -->
+        </div>
+        <ul class="prog-tracks">
+          <li>Advanced Database Systems</li>
+          <li>Cloud Computing &amp; Big Data</li>
+          <li>Lorem Ipsum</li>
+          <li>Lorem Ipsum</li>
+        </ul>
+        <a href="#" class="prog-prospectus">View Prospectus →</a>
+      </div>
+    </div>
+    <div class="prog-image-panel">
+      <img src="../assets/student_study.png" alt="Master of IT students">
+    </div>
   </section>
 
   <!-- footer injected by nav.js -->
 
   <script src="../js/config.js"></script>
-<script src="../js/nav.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/programs.js"></script>
+  <script src="../js/stars.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => initStars('stars'));
+  </script>
 </body>
 </html>
